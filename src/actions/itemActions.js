@@ -1,26 +1,28 @@
-import * as types from './actionTypes';
-import itemApi from '../api/mockItemApi';
-import {ajaxCallError, beginAjaxCall} from './ajaxStatusActions';
+import itemApi from '../api/mockItemApi'
+import { ajaxCallError, beginAjaxCall } from './ajaxStatusActions'
+
+export const LOAD_ITEMS_SUCCESS = "LOAD_ITEMS_SUCCESS"
+export const TOGGLE_ITEM = "TOGGLE_ITEM"
 
 export function loadItemsSuccess(items) {
-  return { type: types.LOAD_ITEMS_SUCCESS, items};
+  return { type: LOAD_ITEMS_SUCCESS, items }
 }
 
 export function loadItems() {
   return dispatch => {
-    dispatch(beginAjaxCall());
+    dispatch(beginAjaxCall())
     return itemApi.getAllItems().then(items => {
-      dispatch(loadItemsSuccess(items));
+      dispatch(loadItemsSuccess(items))
     }).catch(error => {
-      dispatch(ajaxCallError());
-      throw(error);
-    });
-  };
+      dispatch(ajaxCallError())
+      throw(error)
+    })
+  }
 }
 
 export function toggleItem(item) {
   return {
-    type: types.TOGGLE_ITEM,
+    type: TOGGLE_ITEM,
     item: item
-  };
+  }
 }

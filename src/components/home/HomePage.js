@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React from 'react'
+import { Link } from 'react-router'
 
 class HomePage extends React.Component {
   render() {
@@ -9,8 +9,8 @@ class HomePage extends React.Component {
         <p>React, Redux.</p>
         <Link to="checklist" className="btn btn-primary btn-lg">Look here</Link>
       </div>
-    );
+    )
   }
 }
 
-export default HomePage;
+export default HomePage

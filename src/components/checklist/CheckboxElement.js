@@ -1,7 +1,7 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react'
 
-const CheckboxElement = ({item, onChangeItem}) => {
-  console.log("count rendering");
+const CheckboxElement = ({ item, onChangeItem }) => {
+  console.log("count rendering")
   return (
     <li className="list-group-item">
       <label className="form-check-label">
@@ -14,12 +14,12 @@ const CheckboxElement = ({item, onChangeItem}) => {
         {item.label}
       </label>
     </li>
-  );
-};
+  )
+}
 
 CheckboxElement.propTypes = {
   item: PropTypes.object.isRequired,
   onChangeItem: PropTypes.func.isRequired
-};
+}
 
-export default CheckboxElement;
+export default CheckboxElement

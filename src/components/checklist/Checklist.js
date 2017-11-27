@@ -1,7 +1,7 @@
-import React, {PropTypes} from 'react';
-import ChecklistItem from "./ChecklistItem";
+import React, { PropTypes } from 'react'
+import ChecklistItem from "../../containers/checklist/ChecklistItem"
 
-const Checklist = ({items}) => {
+const Checklist = ({ items }) => {
   return (
     <div className="card">
       <ul className="list-group list-group-flush">
@@ -10,11 +10,11 @@ const Checklist = ({items}) => {
         )}
       </ul>
     </div>
-  );
-};
+  )
+}
 
 Checklist.propTypes = {
   items: PropTypes.array.isRequired
-};
+}
 
-export default Checklist;
+export default Checklist

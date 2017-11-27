@@ -1,18 +1,23 @@
-import * as types from '../actions/actionTypes';
-import initialState from './initialState';
+import {
+  LOAD_ITEMS_SUCCESS,
+  TOGGLE_ITEM } from '../actions/itemActions'
+
+const initialState: {} = {
+  items: []
+}
 
 export default function itemReducer(state = initialState.items, action) {
   switch(action.type) {
-    case types.LOAD_ITEMS_SUCCESS:
-      return action.items;
+    case LOAD_ITEMS_SUCCESS:
+      return action.items
 
-    case types.TOGGLE_ITEM:
+    case TOGGLE_ITEM:
       return [
         ...state.filter(item => item.id !== action.item.id ),
-        Object.assign({state}, action.item)
-      ].sort((a, b) => {return a.id - b.id;});
+        action.item
+      ]
 
     default:
-      return state;
+      return state
   }
 }
