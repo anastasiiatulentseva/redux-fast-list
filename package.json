@@ -1,5 +1,5 @@
 {
-  "name": "pluralsight-redux-starter",
+  "name": "redux-fast-list",
   "version": "1.0.0",
   "description": "Starter kit for React and Redux Pluralsight course by Cory House",
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch"
   },
-  "author": "Cory House",
+  "author": "Anastasiia Tulentseva",
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",

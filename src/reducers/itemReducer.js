@@ -12,10 +12,13 @@ export default function itemReducer(state = initialState.items, action) {
       return action.items
 
     case TOGGLE_ITEM:
-      return [
-        ...state.filter(item => item.id !== action.item.id ),
-        action.item
-      ]
+      return state.map( (item, index) => {
+        if (index !== state.findIndex(item => item.id === action.item.id)) {
+          return item;
+        }
+        // return {...item, checked: action.item.checked} // eslint can't parse :((
+        return Object.assign({}, item, {checked: action.item.checked})
+      })
 
     default:
       return state

@@ -10,10 +10,7 @@ class ChecklistPage extends React.Component {
   render() {
     const { items } = this.props
     return (
-      <div>
-        <h1>Items</h1>
-        <Checklist items={items}/>
-      </div>
+      <Checklist items={items}/>
     )
   }
 }
@@ -24,7 +21,7 @@ ChecklistPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    items: state.items.sort((a, b) => { return a.id - b.id })
+    items: state.items
   }
 }
 
